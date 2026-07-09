@@ -12,6 +12,9 @@ export default function RegistrationModal() {
   const [isSuccess, setIsSuccess] = useState(false);
 
   // Form states
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [teamSize, setTeamSize] = useState("");
   const [country, setCountry] = useState("India");
   const [timeline, setTimeline] = useState("");
@@ -20,6 +23,9 @@ export default function RegistrationModal() {
     setStep(1);
     setIsSuccess(false);
     setIsSubmitting(false);
+    setName("");
+    setEmail("");
+    setPhone("");
     setTeamSize("");
     setCountry("India");
     setTimeline("");
@@ -148,6 +154,8 @@ export default function RegistrationModal() {
                           <input 
                             type="text" 
                             required
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
                             placeholder="John Doe"
                             className="w-full px-4 py-3 rounded-xl bg-zinc-50 border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-[#5b52f6]/20 focus:border-[#5b52f6] transition-all"
                           />
@@ -157,6 +165,8 @@ export default function RegistrationModal() {
                           <input 
                             type="email" 
                             required
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                             placeholder="john@company.com"
                             className="w-full px-4 py-3 rounded-xl bg-zinc-50 border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-[#5b52f6]/20 focus:border-[#5b52f6] transition-all"
                           />
@@ -166,6 +176,8 @@ export default function RegistrationModal() {
                           <input 
                             type="tel" 
                             required
+                            value={phone}
+                            onChange={(e) => setPhone(e.target.value)}
                             placeholder="+1 (555) 000-0000"
                             className="w-full px-4 py-3 rounded-xl bg-zinc-50 border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-[#5b52f6]/20 focus:border-[#5b52f6] transition-all"
                           />
