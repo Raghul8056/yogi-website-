@@ -14,6 +14,7 @@ export default function RegistrationModal() {
   // Form states
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [phoneCode, setPhoneCode] = useState("+91");
   const [phone, setPhone] = useState("");
   const [teamSize, setTeamSize] = useState("");
   const [country, setCountry] = useState("India");
@@ -25,6 +26,7 @@ export default function RegistrationModal() {
     setIsSubmitting(false);
     setName("");
     setEmail("");
+    setPhoneCode("+91");
     setPhone("");
     setTeamSize("");
     setCountry("India");
@@ -173,14 +175,32 @@ export default function RegistrationModal() {
                         </div>
                         <div className="flex flex-col gap-1.5">
                           <label className="text-sm font-semibold text-zinc-900">Phone</label>
-                          <input 
-                            type="tel" 
-                            required
-                            value={phone}
-                            onChange={(e) => setPhone(e.target.value)}
-                            placeholder="+1 (555) 000-0000"
-                            className="w-full px-4 py-3 rounded-xl bg-zinc-50 border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-[#5b52f6]/20 focus:border-[#5b52f6] transition-all"
-                          />
+                          <div className="flex gap-2">
+                            <div className="relative w-28 shrink-0">
+                              <select
+                                value={phoneCode}
+                                onChange={(e) => setPhoneCode(e.target.value)}
+                                className="w-full px-3 py-3 rounded-xl bg-zinc-50 border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-[#5b52f6]/20 focus:border-[#5b52f6] transition-all appearance-none text-zinc-900 font-medium text-sm"
+                              >
+                                <option value="+91">🇮🇳 +91</option>
+                                <option value="+1">🇺🇸 +1</option>
+                                <option value="+44">🇬🇧 +44</option>
+                                <option value="+61">🇦🇺 +61</option>
+                                <option value="+971">🇦🇪 +971</option>
+                              </select>
+                              <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-zinc-500 text-xs">
+                                ▼
+                              </div>
+                            </div>
+                            <input 
+                              type="tel" 
+                              required
+                              value={phone}
+                              onChange={(e) => setPhone(e.target.value)}
+                              placeholder="(555) 000-0000"
+                              className="w-full px-4 py-3 rounded-xl bg-zinc-50 border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-[#5b52f6]/20 focus:border-[#5b52f6] transition-all"
+                            />
+                          </div>
                         </div>
 
                         <button 
