@@ -25,7 +25,7 @@ const testimonials: Testimonial[] = [
     rating: 5,
   },
   {
-    name: "Karthick",
+    name: "Vikram",
     role: "Operations Manager",
     company: "TechFlow India",
     quote: "I have been working with Yogi AI for the past 6 months and they have become a fantastic and trusted partner in that time. Everything they do is well thought through and meticulous. From initial design, to implementation, to communication, everything is top-class.",
