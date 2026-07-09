@@ -24,7 +24,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
-        <link rel="preload" href="/images/yogi_monk_6.png" as="image" />
+        <link rel="preload" href="/Monk PNG Purple outfit/3.png" as="image" />
         <RegistrationModalProvider>
           <Navbar />
           <RegistrationModal />

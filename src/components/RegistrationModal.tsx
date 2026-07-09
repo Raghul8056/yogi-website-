@@ -102,16 +102,23 @@ export default function RegistrationModal() {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl" />
                 
                 <img 
-                  src="/images/purple_monks/11.png" 
+                  src="/Monk PNG Purple outfit/2.png" 
                   alt="3D Yogi" 
                   className="w-full max-w-[250px] relative z-10 object-contain drop-shadow-xl"
                 />
                 
                 <div className="relative z-10 mt-8 bg-white p-4 rounded-2xl shadow-sm border border-zinc-100 text-center mx-4">
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 flex gap-1">
-                    <span className="w-2 h-2 rounded-full bg-zinc-300" />
-                    <span className="w-2 h-2 rounded-full bg-zinc-300" />
-                    <span className="w-2 h-2 rounded-full bg-zinc-300" />
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+                    <motion.span 
+                      animate={{ y: [0, -3, 0], opacity: [0.4, 1, 0.4] }}
+                      transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
+                      className="w-2 h-2 rounded-full bg-[#5b52f6]" 
+                    />
+                    <motion.span 
+                      animate={{ y: [0, -3, 0], opacity: [0.4, 1, 0.4] }}
+                      transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
+                      className="w-2 h-2 rounded-full bg-[#5b52f6]" 
+                    />
                   </div>
                   <p className="text-sm font-medium text-zinc-700">
                     {step === 1 
@@ -123,7 +130,7 @@ export default function RegistrationModal() {
 
               {/* Right Panel (Form) */}
               <div className="flex-1 p-6 md:p-10 flex flex-col overflow-y-auto">
-                <AnimatePresence mode="wait">
+                <AnimatePresence mode="popLayout">
                   {isSuccess ? (
                     <motion.div
                       key="success"
@@ -140,9 +147,10 @@ export default function RegistrationModal() {
                   ) : step === 1 ? (
                     <motion.div
                       key="step1"
-                      initial={{ opacity: 0, x: -20 }}
+                      initial={{ opacity: 0, x: -30 }}
                       animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: 20 }}
+                      exit={{ opacity: 0, x: 30 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 25 }}
                       className="flex-1 flex flex-col"
                     >
                       <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-zinc-900 mb-2">
@@ -197,7 +205,7 @@ export default function RegistrationModal() {
                               required
                               value={phone}
                               onChange={(e) => setPhone(e.target.value)}
-                              placeholder="(555) 000-0000"
+                              placeholder="98765 43210"
                               className="w-full px-4 py-3 rounded-xl bg-zinc-50 border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-[#5b52f6]/20 focus:border-[#5b52f6] transition-all"
                             />
                           </div>
@@ -217,9 +225,10 @@ export default function RegistrationModal() {
                   ) : (
                     <motion.div
                       key="step2"
-                      initial={{ opacity: 0, x: -20 }}
+                      initial={{ opacity: 0, x: 30 }}
                       animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: 20 }}
+                      exit={{ opacity: 0, x: -30 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 25 }}
                       className="flex-1 flex flex-col"
                     >
                       <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-zinc-900 mb-2">
@@ -228,20 +237,28 @@ export default function RegistrationModal() {
                       <p className="text-zinc-500 font-medium mb-6">Step 2 of 2</p>
 
                       {/* Progress Bar */}
-                      <div className="flex items-center gap-2 mb-8 select-none">
-                        <div className="flex flex-col gap-1">
-                          <div className="w-3 h-3 rounded-full bg-[#5b52f6]" />
-                          <span className="text-[10px] font-semibold text-[#5b52f6] whitespace-nowrap">About You</span>
+                      <div className="relative flex items-center justify-between mb-10 select-none px-4">
+                        {/* Connecting Lines */}
+                        <div className="absolute left-10 right-10 top-4 h-[2px] bg-zinc-200 -z-10">
+                           <div className="w-1/2 h-full bg-[#5b52f6]" />
                         </div>
-                        <div className="flex-1 h-[2px] bg-[#5b52f6]" />
-                        <div className="flex flex-col gap-1">
-                          <div className="w-3 h-3 rounded-full bg-[#5b52f6]" />
-                          <span className="text-[10px] font-semibold text-[#5b52f6] whitespace-nowrap">Workspace</span>
+                        
+                        {/* Step 1 */}
+                        <div className="flex flex-col items-center gap-2 bg-white">
+                          <div className="w-8 h-8 rounded-full bg-[#5b52f6] text-white flex items-center justify-center text-xs font-bold shadow-md shadow-[#5b52f6]/20 ring-4 ring-white">✓</div>
+                          <span className="text-[10px] font-bold text-[#5b52f6] uppercase tracking-wider bg-white px-1">About You</span>
                         </div>
-                        <div className="flex-1 h-[2px] bg-zinc-200" />
-                        <div className="flex flex-col gap-1">
-                          <div className="w-3 h-3 rounded-full bg-zinc-200" />
-                          <span className="text-[10px] font-semibold text-zinc-400 whitespace-nowrap">Finish</span>
+                        
+                        {/* Step 2 */}
+                        <div className="flex flex-col items-center gap-2 bg-white">
+                          <div className="w-8 h-8 rounded-full bg-white border-2 border-[#5b52f6] text-[#5b52f6] flex items-center justify-center text-xs font-bold shadow-sm ring-4 ring-white">2</div>
+                          <span className="text-[10px] font-bold text-[#5b52f6] uppercase tracking-wider bg-white px-1">Workspace</span>
+                        </div>
+                        
+                        {/* Step 3 */}
+                        <div className="flex flex-col items-center gap-2 bg-white">
+                          <div className="w-8 h-8 rounded-full bg-zinc-50 border-2 border-zinc-200 text-zinc-400 flex items-center justify-center text-xs font-bold shadow-sm ring-4 ring-white">3</div>
+                          <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider bg-white px-1">Finish</span>
                         </div>
                       </div>
 

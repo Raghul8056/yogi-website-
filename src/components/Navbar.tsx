@@ -41,7 +41,7 @@ export default function Navbar() {
           <Link href="/login" className="hidden sm:inline text-[15px] font-semibold text-zinc-700 hover:text-zinc-900 transition-colors px-2">
             Log in
           </Link>
-          <button onClick={openModal} className="text-[14px] font-semibold text-white px-5 py-2.5 rounded-full bg-gradient-to-r from-[#5b6ef7] via-[#7c5cff] to-[#a855f7] hover:shadow-[0_8px_24px_rgba(124,92,255,0.45)] hover:-translate-y-0.5 transition-all shadow-[0_4px_16px_rgba(124,92,255,0.3)] flex items-center gap-2">
+          <button type="button" onClick={openModal} className="text-[14px] font-semibold text-white px-5 py-2.5 rounded-full bg-gradient-to-r from-[#5b6ef7] via-[#7c5cff] to-[#a855f7] hover:shadow-[0_8px_24px_rgba(124,92,255,0.45)] hover:-translate-y-0.5 transition-all shadow-[0_4px_16px_rgba(124,92,255,0.3)] flex items-center gap-2">
             Book a Demo
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.4} d="M14 5l7 7m0 0l-7 7m7-7H3" />

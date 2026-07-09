@@ -244,7 +244,7 @@ export default function HeroHeadline() {
           </p>
 
           <div className="flex flex-wrap items-center gap-3.5">
-            <button onClick={openModal} className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-white font-semibold text-[15px] bg-gradient-to-r from-[#7c5cff] to-[#6d3bf0] shadow-[0_10px_28px_rgba(109,59,240,0.35)] hover:shadow-[0_14px_34px_rgba(109,59,240,0.45)] hover:-translate-y-0.5 transition-all duration-300">
+            <button type="button" onClick={openModal} className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-white font-semibold text-[15px] bg-gradient-to-r from-[#7c5cff] to-[#6d3bf0] shadow-[0_10px_28px_rgba(109,59,240,0.35)] hover:shadow-[0_14px_34px_rgba(109,59,240,0.45)] hover:-translate-y-0.5 transition-all duration-300">
               Start Free - No Card Required
               <svg className="w-4.5 h-4.5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -409,7 +409,7 @@ export default function HeroHeadline() {
               </div>
 
               {/* Yogi crossfade — absolute-filled so every frame stays perfectly centered */}
-              <AnimatePresence>
+              <AnimatePresence initial={false}>
                 <motion.img
                   key={currentYogi}
                   src={yogiImages[currentYogi]}
