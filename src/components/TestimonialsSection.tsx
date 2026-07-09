@@ -21,7 +21,7 @@ const testimonials: Testimonial[] = [
     role: "Managing Director",
     company: "Capture Design",
     quote: "I worked with Yogi AI to develop our internal CRM, and I have to say that I am very pleased with the results. The team was very professional, knew exactly what I needed, and worked hard to ensure that the AI met all of my requirements.",
-    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+    avatar: "/images/testimonials/image (6).png",
     rating: 5,
   },
   {
@@ -29,7 +29,7 @@ const testimonials: Testimonial[] = [
     role: "Operations Manager",
     company: "TechFlow India",
     quote: "I have been working with Yogi AI for the past 6 months and they have become a fantastic and trusted partner in that time. Everything they do is well thought through and meticulous. From initial design, to implementation, to communication, everything is top-class.",
-    avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+    avatar: "/images/testimonials/image (7).png",
     rating: 5,
   },
   {
@@ -37,7 +37,7 @@ const testimonials: Testimonial[] = [
     role: "Agency Owner",
     company: "Agora",
     quote: "I've had the pleasure of working with Yogi AI spanning across six different campaigns. From day one, they've consistently proven themselves to be a top-tier automation partner. Their expertise is outstanding, and no matter the complexity, they've always delivered with precision and quality.",
-    avatar: "https://randomuser.me/api/portraits/men/46.jpg",
+    avatar: "/images/testimonials/image (8).png",
     rating: 5,
   },
   {
@@ -45,7 +45,7 @@ const testimonials: Testimonial[] = [
     role: "HR Director",
     company: "GlobalTalent",
     quote: "Yogi AI delivered a well-functioning recruitment bot and a polished dashboard on time, exceeding expectations. The team demonstrated exceptional project management skills and communicated clearly via email. They were responsive and proactive.",
-    avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+    avatar: "/images/testimonials/image (9).png",
     rating: 5,
   },
   {
@@ -53,7 +53,7 @@ const testimonials: Testimonial[] = [
     role: "Digital Agency",
     company: "DigitalCore",
     quote: "Team at Yogi did a great job. Their friendly and efficient approach made the integration a pleasure. I look forward to working with them again and again!",
-    avatar: "https://randomuser.me/api/portraits/men/22.jpg",
+    avatar: "/images/testimonials/image (10).png",
     rating: 5,
     isVideo: true,
     videoPoster: "https://images.unsplash.com/photo-1556761175-5973dc0f32d7?auto=format&fit=crop&q=80&w=800",
@@ -63,7 +63,7 @@ const testimonials: Testimonial[] = [
     role: "Founder",
     company: "Golden Goose",
     quote: "Project with Yogi AI went superbly. Very happy with their work and have already engaged them again for another automation project. Highly recommend it!",
-    avatar: "https://randomuser.me/api/portraits/women/24.jpg",
+    avatar: "/images/testimonials/image (11).png",
     rating: 5,
   },
   {
@@ -71,7 +71,7 @@ const testimonials: Testimonial[] = [
     role: "VP of Sales",
     company: "ScaleUp",
     quote: "Yogi and the team are nothing short of world class. They understand exactly what you want and deliver on time, every time. We never consider anyone else for AI development and hope to work with them for many years to come.",
-    avatar: "https://randomuser.me/api/portraits/men/62.jpg",
+    avatar: "/images/testimonials/image (13).png",
     rating: 5,
   },
   {
@@ -79,14 +79,27 @@ const testimonials: Testimonial[] = [
     role: "Product Manager",
     company: "InnovateTech",
     quote: "The best AI partner ever!! Yogi AI brings a calm, solution-focused approach to any challenge and works tirelessly to ensure success. Whether it's meeting tight deadlines or handling unexpected issues, they always go above and beyond.",
-    avatar: "https://randomuser.me/api/portraits/women/33.jpg",
+    avatar: "/images/testimonials/IMG_20260709_154553.png",
     rating: 5,
   }
 ];
 
+const localAvatars = [
+  "/images/testimonials/IMG_20260709_103231_935.png",
+  "/images/testimonials/IMG_20260709_154553.png",
+  "/images/testimonials/Image_2026-07-09T10_12_44.029Z.png",
+  "/images/testimonials/image (10).png",
+  "/images/testimonials/image (11).png",
+  "/images/testimonials/image (13).png",
+  "/images/testimonials/image (6).png",
+  "/images/testimonials/image (7).png",
+  "/images/testimonials/image (8).png",
+  "/images/testimonials/image (9).png"
+];
+
 // 30 random avatars for the infinite marquee
 const marqueeAvatars = Array.from({ length: 30 }).map((_, i) => 
-  `https://randomuser.me/api/portraits/${i % 2 === 0 ? 'men' : 'women'}/${(i % 50) + 10}.jpg`
+  localAvatars[i % localAvatars.length]
 );
 
 function TestimonialCard({ testimonial, index }: { testimonial: Testimonial; index: number }) {
