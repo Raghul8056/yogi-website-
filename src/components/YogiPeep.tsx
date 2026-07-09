@@ -38,7 +38,7 @@ export default function YogiPeep() {
   return (
     <div 
       ref={containerRef} 
-      className="absolute bottom-0 right-[2%] md:right-[5%] w-[200px] md:w-[300px] h-[300px] md:h-[400px] z-20 pointer-events-none overflow-hidden"
+      className="absolute bottom-0 right-[2%] md:right-[5%] w-[250px] md:w-[400px] h-[350px] md:h-[500px] z-20 pointer-events-none overflow-hidden"
     >
       <img
         ref={imgRef}

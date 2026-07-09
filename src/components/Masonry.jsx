@@ -64,8 +64,8 @@ const Masonry = ({
   colorShiftOnHover = false
 }) => {
   const columns = useMedia(
-    ['(min-width:1200px)', '(min-width:900px)', '(min-width:600px)', '(min-width:400px)'],
-    [5, 3, 2, 1],
+    ['(min-width:1500px)', '(min-width:1000px)', '(min-width:600px)', '(min-width:400px)'],
+    [5, 4, 3, 2],
     1
   );
 
@@ -131,10 +131,10 @@ const Masonry = ({
     return items.map((child, index) => {
       let col = colHeights.indexOf(Math.min(...colHeights));
       
-      // Centering logic for bottom row if not all items fit evenly
-      if (columns === 3 && index === 3) col = 0;
-      if (columns === 3 && index === 4) col = 2;
-      if (columns === 2 && index === 4) col = 0;
+      // Explicitly place the bottom 3 images to perfectly center them
+      if (index === 5) col = 3;
+      if (index === 6) col = 2;
+      if (index === 7) col = 1; // Last image placed under the second image
 
       const x = columnWidth * col;
       const height = child.height / 2;

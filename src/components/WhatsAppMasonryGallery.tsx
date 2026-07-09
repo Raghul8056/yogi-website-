@@ -36,7 +36,7 @@ const items = [
 
 export default function WhatsAppMasonryGallery() {
   return (
-    <div className="w-full max-w-7xl mx-auto h-[700px] lg:h-[800px] relative px-4">
+    <div className="w-full h-[400px] lg:h-[450px] relative">
       <Masonry
         items={items}
         ease="power4.in"
