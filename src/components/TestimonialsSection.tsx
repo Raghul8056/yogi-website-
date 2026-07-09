@@ -33,7 +33,7 @@ const testimonials: Testimonial[] = [
     rating: 5,
   },
   {
-    name: "Ciranjeevan",
+    name: "Adi",
     role: "Agency Owner",
     company: "Agora",
     quote: "I've had the pleasure of working with Yogi AI spanning across six different campaigns. From day one, they've consistently proven themselves to be a top-tier automation partner. Their expertise is outstanding, and no matter the complexity, they've always delivered with precision and quality.",
