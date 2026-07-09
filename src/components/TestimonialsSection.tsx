@@ -17,7 +17,7 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    name: "Arjun Desai",
+    name: "Vishnu Kumar M.",
     role: "Managing Director",
     company: "Capture Design",
     quote: "I worked with Yogi AI to develop our internal CRM, and I have to say that I am very pleased with the results. The team was very professional, knew exactly what I needed, and worked hard to ensure that the AI met all of my requirements.",
@@ -25,7 +25,7 @@ const testimonials: Testimonial[] = [
     rating: 5,
   },
   {
-    name: "Priya Patel",
+    name: "Karthick",
     role: "Operations Manager",
     company: "TechFlow India",
     quote: "I have been working with Yogi AI for the past 6 months and they have become a fantastic and trusted partner in that time. Everything they do is well thought through and meticulous. From initial design, to implementation, to communication, everything is top-class.",
@@ -33,7 +33,7 @@ const testimonials: Testimonial[] = [
     rating: 5,
   },
   {
-    name: "Rajesh Kumar",
+    name: "Ciranjeevan",
     role: "Agency Owner",
     company: "Agora",
     quote: "I've had the pleasure of working with Yogi AI spanning across six different campaigns. From day one, they've consistently proven themselves to be a top-tier automation partner. Their expertise is outstanding, and no matter the complexity, they've always delivered with precision and quality.",
