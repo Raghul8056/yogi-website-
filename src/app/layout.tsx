@@ -3,7 +3,8 @@ import { Outfit } from "next/font/google";
 import "./globals.css";
 import SmoothScroller from "@/components/SmoothScroller";
 import Navbar from "@/components/Navbar";
-
+import { RegistrationModalProvider } from "@/context/RegistrationModalContext";
+import RegistrationModal from "@/components/RegistrationModal";
 const outfit = Outfit({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
@@ -24,10 +25,13 @@ export default function RootLayout({
           rel="stylesheet"
         />
         <link rel="preload" href="/images/yogi_monk_6.png" as="image" />
-        <Navbar />
-        <SmoothScroller>
-          {children}
-        </SmoothScroller>
+        <RegistrationModalProvider>
+          <Navbar />
+          <RegistrationModal />
+          <SmoothScroller>
+            {children}
+          </SmoothScroller>
+        </RegistrationModalProvider>
       </body>
     </html>
   );

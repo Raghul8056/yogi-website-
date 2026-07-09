@@ -1,6 +1,10 @@
-import Link from 'next/link';
+"use client";
 
+import Link from 'next/link';
+import { useRegistrationModal } from "@/context/RegistrationModalContext";
 export default function Navbar() {
+  const { openModal } = useRegistrationModal();
+
   return (
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[96%] max-w-[1920px] bg-white/80 backdrop-blur-xl border border-black/[0.06] rounded-full shadow-[0_10px_40px_-12px_rgba(76,50,140,0.18)] transition-all duration-300">
       <div className="flex items-center justify-between w-full px-4 sm:px-6 py-3 relative">
@@ -37,12 +41,12 @@ export default function Navbar() {
           <Link href="/login" className="hidden sm:inline text-[15px] font-semibold text-zinc-700 hover:text-zinc-900 transition-colors px-2">
             Log in
           </Link>
-          <Link href="/book" className="text-[14px] font-semibold text-white px-5 py-2.5 rounded-full bg-gradient-to-r from-[#5b6ef7] via-[#7c5cff] to-[#a855f7] hover:shadow-[0_8px_24px_rgba(124,92,255,0.45)] hover:-translate-y-0.5 transition-all shadow-[0_4px_16px_rgba(124,92,255,0.3)] flex items-center gap-2">
+          <button onClick={openModal} className="text-[14px] font-semibold text-white px-5 py-2.5 rounded-full bg-gradient-to-r from-[#5b6ef7] via-[#7c5cff] to-[#a855f7] hover:shadow-[0_8px_24px_rgba(124,92,255,0.45)] hover:-translate-y-0.5 transition-all shadow-[0_4px_16px_rgba(124,92,255,0.3)] flex items-center gap-2">
             Book a Demo
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.4} d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
-          </Link>
+          </button>
         </div>
       </div>
     </nav>
