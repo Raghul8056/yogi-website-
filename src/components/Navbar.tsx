@@ -6,7 +6,7 @@ export default function Navbar() {
   const { openModal } = useRegistrationModal();
 
   return (
-    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[96%] max-w-[1920px] bg-white/80 backdrop-blur-xl border border-black/[0.06] rounded-full shadow-[0_10px_40px_-12px_rgba(76,50,140,0.18)] transition-all duration-300">
+    <nav className="font-inter fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[96%] max-w-[1920px] bg-white/80 backdrop-blur-xl border border-black/[0.06] rounded-full shadow-[0_10px_40px_-12px_rgba(76,50,140,0.18)] transition-all duration-300">
       <div className="flex items-center justify-between w-full px-4 sm:px-6 py-3 relative">
         {/* Left: Logo */}
         <div className="flex items-center ml-1">
