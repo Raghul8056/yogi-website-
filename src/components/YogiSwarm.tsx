@@ -10,6 +10,7 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRegistrationModal } from "@/context/RegistrationModalContext";
 
 const SPRITE_COUNT = 150; // Reduced to prevent clutter
 
@@ -238,6 +239,7 @@ function SwarmMesh({ scrollObj }: { scrollObj: { progress: number } }) {
 
 export default function YogiSwarm() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const { openModal } = useRegistrationModal();
   
   // Reactive object to pass scroll progress to the canvas loop without re-rendering React
   const scrollObj = useMemo(() => ({ progress: 0 }), []);
@@ -290,6 +292,28 @@ export default function YogiSwarm() {
         <p className="mt-8 text-xl md:text-2xl text-zinc-600 max-w-2xl mx-auto drop-shadow-[0_0_10px_rgba(255,255,255,1)] font-medium">
           The autonomous workforce is already here. Don&apos;t get left behind.
         </p>
+        <div className="mt-10 pointer-events-auto">
+          <button
+            type="button"
+            onClick={openModal}
+            className="group inline-flex items-center gap-2 px-8 py-4 rounded-full text-white font-semibold text-[16px] bg-gradient-to-r from-[#5b6ef7] via-[#7c5cff] to-[#a855f7] shadow-[0_10px_30px_rgba(124,92,255,0.35)] hover:shadow-[0_14px_40px_rgba(124,92,255,0.45)] hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
+          >
+            Get Me
+            <svg
+              className="w-5 h-5 transition-transform group-hover:translate-x-1"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2.4}
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
 
       {/* Gradient fades at top and bottom */}
